@@ -7,4 +7,4 @@
 
 # Demo of MCQ's 
 
-<img src = "![ezgif com-gif-maker (3)](https://user-images.githubusercontent.com/73393935/99178902-df6cca00-2739-11eb-8195-732ad8be817d.gif)" width = "280.0" />
+<img src = "https://user-images.githubusercontent.com/73393935/99178902-df6cca00-2739-11eb-8195-732ad8be817d.gif" width = "280.0" />
