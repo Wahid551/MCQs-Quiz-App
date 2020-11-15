@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mcqs_quizz/homepage.dart';
 import 'dart:async';
@@ -12,7 +13,7 @@ class _splashscreenState extends State<splashscreen> {
   @override
   void initState() {
     super.initState();
-    Timer(Duration(seconds: 1), navigate);
+    Timer(Duration(seconds: 2), navigate);
   }
 
   void navigate() {
@@ -26,16 +27,14 @@ class _splashscreenState extends State<splashscreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.indigo,
+      backgroundColor: Colors.white,
       body: Center(
-        child: Text(
-          "Quizstar\nTest Yourself !!",
-          style: TextStyle(
-            fontSize: 50.0,
-            color: Colors.white,
-            fontFamily: "Satisfy",
+        child: Container(
+          width: 150.0,
+          height: 150.0,
+          child: Center(
+            child: Image.asset('images/icon.png'),
           ),
-          textAlign: TextAlign.center,
         ),
       ),
     );

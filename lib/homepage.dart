@@ -95,9 +95,10 @@ class _homepageState extends State<homepage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.indigoAccent,
         centerTitle: true,
         title: Text(
-          "Quizstar",
+          "MCQ'S App",
           style: TextStyle(
             fontFamily: "Quando",
           ),
