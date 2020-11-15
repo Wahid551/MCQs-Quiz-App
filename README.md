@@ -7,4 +7,4 @@
 
 # Demo of MCQ's 
 
-<img src = "https://user-images.githubusercontent.com/73393935/99178714-cd8a2780-2737-11eb-8e2c-e09bf8dc4c1e.gif" width = "200.0" />
+<img src = "https://user-images.githubusercontent.com/73393935/99178815-e34c1c80-2738-11eb-940a-851470157b22.gif" width = "200.0" />
