@@ -1,88 +1,88 @@
 [
     {
-        "1": "What Will Be The Output Of the Following Code ?\na = \"p\" * 3\nprint(a)",
-        "2": "Which function finds out the Variable type in Python ?",
-        "3": "Which of the following keyword is used to define a function in Python ?",
-        "4": "Which of the following is a print Function in Python ?",
-        "5": "Which function finds out the Variable type in Python ?",
-        "6": "Which of the following keyword is used to define a function in Python ?",
-        "7": "Which function finds out the Variable type in Python ?",
-        "8": "Which of the following keyword is used to define a function in Python ?",
-        "9": "Which function finds out the Variable type in Python ?",
-        "10": "Which of the following keyword is used to define a function in Python ?"
+        "0": "What Will Be The Output Of the Following Code ?\na = \"p\" * 3\nprint(a)",
+        "1": "Which function finds out the Variable type in Python ?",
+        "2": "Which of the following keyword is used to define a function in Python ?",
+        "3": "Which of the following is a print Function in Python ?",
+        "4": "What will be the sum of 2 +3 ?",
+        "5": "What is output for − max(''please help '')?",
+        "6": "Which among them is used to create an object? ",
+        "7": "Which code is used to open a file for binary writing?",
+        "8": "Which is the special symbol used in python to add comments?",
+        "9": "What will be the output 5-3?"
     },
     {
-        "1": {
+        "0": {
             "a": "pp",
             "b": "ppp",
             "c": "3p",
             "d": "p3"
         },
-        "2": {
+        "1": {
             "a": "typedef",
             "b": "typeof",
             "c": "type",
             "d": "find"
         },
-        "3": {
+        "2": {
             "a": "func",
             "b": "def",
             "c": "void",
             "d": "function"
         },
-        "4": {
+        "3": {
             "a": "cout",
             "b": "print",
             "c": "println",
             "d": "stderr"
         },
-        "5": {
+        "4": {
             "a": "typedef",
             "b": "typeof",
-            "c": "type",
+            "c": "5",
             "d": "find"
+        },
+        "5": {
+            "a": "s",
+            "b": "a blank space character",
+            "c": "e",
+            "d": "p"
         },
         "6": {
-            "a": "func",
-            "b": "def",
-            "c": "void",
-            "d": "function"
+            "a": "A class",
+            "b": "A function",
+            "c": "A Methd",
+            "d": "A constructor"
         },
         "7": {
-            "a": "typedef",
-            "b": "typeof",
-            "c": "type",
-            "d": "find"
+            "a": "W",
+            "b": "Wb",
+            "c": "r+",
+            "d": "a"
         },
         "8": {
-            "a": "func",
-            "b": "def",
-            "c": "void",
-            "d": "function"
-        },
-        "9": {
-            "a": "typedef",
-            "b": "typeof",
+            "a": "$",
+            "b": "#",
             "c": "type",
             "d": "find"
         },
-        "10": {
+        "9": {
             "a": "func",
-            "b": "def",
-            "c": "void",
+            "b": "2",
+            "c": "4",
             "d": "function"
         }
     },
     {
-        "1": "ppp",
-        "2": "type",
-        "3": "def",
-        "4": "print",
-        "5": "type",
-        "6": "def",
-        "7": "type",
-        "8": "def",
-        "9": "type",
-        "10": "def"
+        "0": "ppp",
+        "1": "type",
+        "2": "def",
+        "3": "print",
+        "4": "5",
+        "5": "s",
+        "6": "A constructor",
+        "7": "Wb",
+        "8": "#",
+        "9": "2"
     }
 ]

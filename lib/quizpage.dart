@@ -67,8 +67,10 @@ class _quizpageState extends State<quizpage> {
   Color right = Colors.green;
   Color wrong = Colors.red;
   int marks = 0;
-  int i = 1;
+  int i = 0;
+  int j = 1;
   bool disableAnswer = false;
+  bool disableundo = true;
   int timer = 15;
   String showtimer = "15";
   var random_array;
@@ -86,20 +88,20 @@ class _quizpageState extends State<quizpage> {
   // to create the array elements randomly use the dart:math module
   // -----     CODE TO GENERATE ARRAY RANDOMLY
 
-  // genrandomarray() {
-  //   var distinctIds = [];
-  //   var rand = new Random();
-  //   for (int i = 0;;) {
-  //     distinctIds.add(rand.nextInt(10));
-  //     random_array = distinctIds.toSet().toList();
-  //     if (random_array.length < 10) {
-  //       continue;
-  //     } else {
-  //       break;
-  //     }
-  //   }
-  //   print(random_array);
-  // }
+  genrandomarray() {
+    var distinctIds = [];
+    var rand = new Random();
+    for (int i = 0;;) {
+      distinctIds.add(rand.nextInt(10));
+      random_array = distinctIds.toSet().toList();
+      if (random_array.length < 10) {
+        continue;
+      } else {
+        break;
+      }
+    }
+    print(random_array);
+  }
 
   //   var random_array;
   //   var distinctIds = [];
@@ -122,7 +124,7 @@ class _quizpageState extends State<quizpage> {
   @override
   void initState() {
     starttimer();
-    //genrandomarray();
+    genrandomarray();
     super.initState();
   }
 
@@ -155,8 +157,9 @@ class _quizpageState extends State<quizpage> {
     canceltimer = false;
     timer = 15;
     setState(() {
-      if (i < 10) {
-        i++;
+      if (j < 10) {
+        i = random_array[j];
+        j++;
       } else {
         Navigator.of(context).pushReplacement(MaterialPageRoute(
           builder: (context) => resultpage(marks: marks),
@@ -167,9 +170,18 @@ class _quizpageState extends State<quizpage> {
       btncolor["c"] = Colors.indigoAccent;
       btncolor["d"] = Colors.indigoAccent;
       disableAnswer = false;
+      disableundo = false;
     });
     starttimer();
   }
+
+  // void disable(String k) {
+  //   if (mydata[2][i.toString()] == mydata[1][i.toString()][k]) {
+  //     disableundo = true;
+  //   } else {
+  //     disableundo = false;
+  //   }
+  // }
 
   void checkanswer(String k) {
     // in the previous version this was
@@ -182,17 +194,21 @@ class _quizpageState extends State<quizpage> {
       marks = marks + 5;
       // changing the color variable to be green
       colortoshow = right;
+      disableundo = true;
     } else {
       // just a print sattement to check the correct working
       // debugPrint(mydata[2]["1"] + " is equal to " + mydata[1]["1"][k]);
       colortoshow = wrong;
+      disableundo = true;
     }
     setState(() {
       // applying the changed color to the particular button that was selected
       btncolor[k] = colortoshow;
+      //disable(k);
       canceltimer = true;
       disableAnswer = true;
     });
+
     // nextquestion();
     // changed timer duration to 1 second
     Timer(Duration(seconds: 1), nextquestion);
@@ -303,33 +319,44 @@ class _quizpageState extends State<quizpage> {
               ),
             ),
             Expanded(
-              child: FlatButton(
-                textColor: Colors.indigo,
-                onPressed: () {
-                  setState(() {
-                    if (i > 1) {
-                      i = i - 1;
-                    } else {
-                      i = i;
-                    }
-                  });
-                },
-                disabledTextColor: Colors.black,
-                padding: EdgeInsets.only(
-                    top: 10.0, bottom: 10.0, left: 10.0, right: 10.0),
-                splashColor: Colors.indigo,
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(40.0),
-                    side: BorderSide(
-                      color: Colors.indigo,
-                    )),
-                child: Text(
-                  'Undo',
-                  style: TextStyle(
-                    fontFamily: 'Arial',
-                    fontSize: 30.0,
-                    fontWeight: FontWeight.bold,
-                    letterSpacing: 3.0,
+              child: AbsorbPointer(
+                absorbing: disableundo,
+                child: FlatButton(
+                  color: Colors.indigoAccent,
+                  textColor: Colors.white,
+                  onPressed: () {
+                    setState(() {
+                      if (j > 0) {
+                        j = j - 2;
+                        //nextquestion();
+                        if (j <= 0) {
+                          i = 0;
+                          j = 1;
+                        } else {
+                          nextquestion();
+                        }
+                      } else {
+                        j = 0;
+                        nextquestion();
+                      }
+                    });
+                  },
+                  padding: EdgeInsets.only(
+                      top: 10.0, bottom: 10.0, left: 10.0, right: 10.0),
+                  splashColor: Colors.indigo,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(40.0),
+                      side: BorderSide(
+                        color: Colors.indigo,
+                      )),
+                  child: Text(
+                    'Undo',
+                    style: TextStyle(
+                      fontFamily: 'Quando',
+                      fontSize: 30.0,
+                      fontWeight: FontWeight.bold,
+                      letterSpacing: 3.0,
+                    ),
                   ),
                 ),
               ),
